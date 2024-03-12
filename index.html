@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Brent Tracker</title>
+        <link rel="shortcut icon" href="fav.ico">
+        <style>
+            div {
+                width: 300px;
+                height: 100px;
+                background-color: red;
+                border: 2px black solid;
+                text-align: center;
+                line-height: 64px;
+                margin: auto;
+                transition: all 1s;
+            }
+            img {
+                height: 500px;
+                width: 500px;
+            }
+        </style>
+    </head>
+<body style="background-color: aqua;">
+    <header style="text-align: center; font-size: 14pt;">
+        <h2>Who is Brent Today?</h2>
+    </header>
+    <img src="brent.jpg" style="float: right;">
+    <img src="" style="float: left;" id="image">
+    <div id="rotate">
+    <button onclick="displayText()" id="button">Click For Brent's Name!</button>
+    <p id="demo" style="display: none"></p>
+    </div>
+    
+    
+   
+   <script>
+   let y = new Date();
+   let x = y.getDay() - 1; //generates day. Minus 1 due to my timezone.
+   let text = "";
+   let options=[" of Poland"," of Malaysia"," of Thailand"," of Micronesia"," of Sweden","",""]
+        text+="Brentus Gronfurus Maximus III"+options[x] //displays name
+        function displayText() { //function that activates button
+            let text = document.getElementById("demo");
+            text.style.display = "block"; 
+            let textTwo = document.getElementById("button")
+            textTwo.style.display = "none";
+            let rotate = document.getElementById("rotate");
+            rotate.style.transform = 'rotate(360deg)';
+        }
+        document.getElementById("demo").innerHTML = text //displays the name
+        let myImage = function myImage(img) { 
+        const image = document.getElementById('image');
+        image.src = img;
+    }
+        switch (x) {
+            case 0:
+            myImage("dog.jpg");
+            break;
+            case 1:
+            myImage("cot.PNG");
+            break;
+            case 2:
+            myImage("waffle.PNG");
+            break;
+            case 3:
+            myImage("soldier.PNG");
+            break;
+            case 4:
+            myImage("Gabe.jpg");
+            break;
+            case 5:
+            myImage("Froge.jpg");
+            break;
+            case 6:
+            myImage("Frankie.jpg");
+            break;
+        }
+    </script>
+
+</body>
+</html>
