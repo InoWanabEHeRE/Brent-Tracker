@@ -107,11 +107,10 @@ var t = setInterval(function() {
         }
         
         document.getElementById("demo").innerHTML = text //displays the name
-        function myImage(img) { 
+        let myImage = function myImage(img) { 
         const image = document.getElementById('image');
         image.src = img;
     }
-       myImage();
         switch (x) {
             case 0:
             myImage("dog.jpg");
