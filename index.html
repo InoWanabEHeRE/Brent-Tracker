@@ -89,10 +89,10 @@ var t = setInterval(function() {
 </div>
    <script>
    let y = new Date();
-   let x = y.getDay() - 1; //generates day. Minus 1 due to my timezone.
+   let x = y.getDay(); //generates day. Minus 1 due to my timezone.
    let text = "";
    let timeout;
-   text += "Brentus Gronfurus Maximus III" + [" of Poland"," of Malaysia"," of Thailand"," of Micronesia"," of Sweden","",""][x];
+   text += "Brentus Gronfurus Maximus III" + ["", " of Poland"," of Malaysia"," of Thailand"," of Micronesia"," of Sweden",""][x];
         function displayText() { //function that activates button
             let text = document.getElementById("demo");
             text.style.display = "block"; 
