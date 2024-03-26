@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Offline</title>
+    <link rel="shortcut icon" href="black.ico">
+    <style>
+        #offline {
+            background-color: black;
+            animation: pulse 1s infinite alternate;
+            color: white;
+            font-size: 30pt;
+            text-align: center;
+            display: block;
+        }
+        body {
+            background-color: black;
+        }
+        @keyframes pulse {
+            from { opacity: 0; }
+        }
+        body {
+            overflow: hidden;
+        }
+        #newButton {
+            margin: auto;
+            text-align: center;
+            display: none;
+            height: 60px;
+            width: 80px;
+        }
+        img {
+            height: 800px;
+            width: 900px;
+        }
+        .container {
+        display: flex;
+        justify-content: space-around; /* Adjust as needed */
+        }
+        .container > div {
+        text-align: center;
+        }
+        p {
+        clear: none;
+        display: inline;
+        }
+    </style>
+</head>
+<body>
+    <audio id="audio">
+        <source src="offline.mp3" type="audio/mpeg"></source>
+      </audio>
+      <audio id="funky">
+        <source src="funky.mp3" type="audio/mpeg"></source>
+      </audio>
+    <article id="restart">
+    <div class="container">
+        <div>
+            <p id="offline">Website Offline</p>
+        <button onclick="restart()">Restart Website</button>
+        </div>
+    </div>
+    </article>
+    <button id="newButton"><a href="index.html">Finish Restart Process</a></button>
+    <img src="spinningsalmon.gif" id="salmon" style="display: none;">
+    <script>
+        try {
+            function restart() {
+            let x = document.getElementById("audio");
+            x.play();
+            let y = document.getElementById("restart");
+            y.style.display = "none";
+            setTimeout(() => {
+            let z = document.getElementById('salmon');
+            z.style.display = "block";
+            let a = document.getElementById("newButton");
+            a.style.display = "block";
+            }, 12000)
+            setTimeout(() => {
+                let funky = document.getElementById("funky");
+                funky.play();
+            }, 12001)
+
+        }
+    } catch(err) {
+        alert(err)
+    }
+    </script>
+</body>
+</html>

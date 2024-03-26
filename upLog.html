@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="shortcut icon" href="fav.ico">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update Log</title>
+  <style>
+p {
+  display: none;
+}
+
+header {
+  text-align: center;
+}
+
+.dropdown {
+  display: inline-block;
+}
+
+.label {
+  display: inline-block;
+  padding-right: 2px;
+  border: 1px black solid;
+  font-size: 14pt;
+}
+
+.arrow {
+  display: inline-block;
+}
+
+.dropdown .content {
+  display: none;
+}
+
+.dropdown.open .arrow {
+  transform: rotate(90deg);
+}
+
+.dropdown.open .content {
+  display: block;
+}
+.textHide {
+    text-decoration: underline;
+    color: blue;
+}
+.content {
+    padding-top: 4px;
+}
+ol {
+  list-style-type:upper-roman;
+}
+ul {
+  list-style-type: disc;
+}
+a {
+  text-decoration: none;
+  color: #EAEA26;
+}
+</style>
+</head>
+
+<body>
+  <header>
+    <h1>Update Log</h1>
+  </header>
+  <div title="Version 1 Updates">
+    <div class="dropdown">
+      <div class="label" onclick="paraDrop(this)">Version 1 <span class="arrow"> > </span></div>
+      <div class="content">
+        <ul style="list-style-type: square;">
+          <li>V 1.0
+            <ul>
+              <li>Main Site was implemented.
+            </ul>
+          <li>V 1.1 (patch)
+            <ul>
+              <li>Fixed bug causing undefined on Sundays.
+              <li>Version Countdown implemented.
+            </ul>
+          </ul>
+        <div onclick="paraUp(this)" class="textHide">Hide Text</div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div title="Version 2 Updates">
+    <div class="dropdown">
+      <div class="label" onclick="paraDrop(this)">Version 2 <span class="arrow"> > </span></div>
+      <div class="content">
+        <ul style="list-style-type: square;">
+          <li>V 2.0
+            <ul>
+              <li>Version Selector implemented.
+              <li>Update Log implemented.
+              <li>Name options expanded.
+              <li>Meme options expanded.
+              <li>Salmon.
+              <li>Easter <a href="easteregg.png" target="_blank">Egg</a>.
+            </ul>
+        </ul>
+        <div onclick="paraUp(this)" class="textHide">Hide Text</div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <script>
+    function paraDrop(el) {
+  el.parentElement.classList.add('open');
+}
+
+function paraUp(el) {
+  el.parentElement.parentElement.classList.remove('open');
+}
+    </script>
+
+</body>
+
+</html>
