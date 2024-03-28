@@ -15,10 +15,9 @@
                 }
                 .versionDiv {
                     position: fixed;
-                    right: 0;
                     bottom: 0;
                     float:none;
-                    top: unset;
+                    top: auto;
                 }
                 .mobileMeme {
                     display: block;
@@ -26,10 +25,15 @@
                     text-align: center;
                     margin: 10px;
                 }
+            }
+            @media screen and (min-width: 751px) {
+                    .versionDiv {
+                    top:0;
+                }
+            }
                 #salmon {
                     animation: animation 9s infinite;
                 }
-            }
             .mobileMeme {
                 display: none;
             }
@@ -129,13 +133,12 @@
             }
             .versionDiv {
                 border: 2px black groove;
-                top: 1%;
                 right: .5%; 
                 width: 100px; 
                 height: 60px; 
                 clear: none;
                 float: right;
-                position: absolute;
+                position: fixed;
                 background: linear-gradient(to right, red, yellow, green, blue, purple, red);
                 -webkit-text-fill-color: transparent;
                 -webkit-background-clip: text;
