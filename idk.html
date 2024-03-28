@@ -10,11 +10,21 @@
         <meta name="author" content="Liam F. Davis">
         <style>
             @media screen and (max-width: 750px) {
-                img {
+                img:not(#salmon, .mobileMeme) {
                     display: none;
                 }
+                .versionDiv {
+                    padding: 2px;
+                }
+                .mobileMeme {
+                    display: block;
+                    margin: auto;
+                    text-align: center;
+                }
             }
-                
+            .mobileMeme {
+                display: none;
+            }
             .div1 {
                 width: 300px;
                 height: 100px;
@@ -291,5 +301,6 @@ function salmon() {
 
     </script>
 <a href="offline.html"><img id="salmon" src="slamon.png"></a>
+<img src="" style="float: left;" id="image" class="mobileMeme">
 </body>
 </html>
