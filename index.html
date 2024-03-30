@@ -5,13 +5,38 @@
         <link rel="shortcut icon" href="fav.ico">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="Brent, Tracker, Brent Tracker, brent tracker, name">
+        <meta name="description" content="Brent Tracker is a website to track the name of my friend, Brent. I update this website semi-regularly with new names and little easter eggs.">
+        <meta name="author" content="Liam F. Davis">
         <style>
             @media screen and (max-width: 750px) {
-                img {
+                img:not(#salmon, .mobileMeme, #upLogImg) {
                     display: none;
                 }
+                .versionDiv {
+                    position: fixed;
+                    bottom: 0;
+                    float:none;
+                    top: auto;
+                }
+                .mobileMeme {
+                    display: block;
+                    margin: auto;
+                    text-align: center;
+                    margin: 10px;
+                }
             }
-                
+            @media screen and (min-width: 751px) {
+                    .versionDiv {
+                    top: 2px;
+                }
+            }
+                #salmon {
+                    animation: animation 9s infinite;
+                }
+            .mobileMeme {
+                display: none;
+            }
             .div1 {
                 width: 300px;
                 height: 100px;
@@ -21,6 +46,7 @@
                 line-height: 64px;
                 margin: auto;
                 transition: all 1s;
+                overflow: scroll;
             }
             img {
                 height: 500px;
@@ -36,27 +62,128 @@
                 margin: auto;
                 text-align: center;
                 font-size: 14pt;
+                padding-bottom: 10px;
+            }
+            #salmon {
+                width: 100px;
+                height: 30px;
+                animation: animation 15s infinite;
+                position: absolute;
+            }
+            
+            @keyframes animation {
+               0% {
+                left: 0vh;
+                top: 30vh;
+               }
+               25% {
+                left: 100vh;
+                top: 30vh;
+                transform: rotate(0deg);
+               }
+               30% {
+                left: 100vh;
+                top: 30vh;
+                transform: rotate(-90deg);
+               }
+               40% {
+                top: 0vh;
+                transform: rotate(-90deg);
+               }
+               45% {
+                top: 0vh;
+                transform: rotate(90deg)
+               }
+               60% {
+                top: 100vh;
+                left: 100vh;
+                transform: rotate(90deg);
+               }
+               61% {
+                top: 100vh;
+                left: 100vh;
+                transform: rotate(90deg);
+               }
+               65% {
+                transform: rotate(180deg);
+               }
+               80% {
+                left: 1vh;
+                top: 70vh;
+                transform: rotate(270deg);
+               }
+               90% {
+                left: 1vh;
+                top: 30vh;
+               }
+               95% {
+                transform: rotate(0deg);
+               }
+               100% {
+                left: 0vh;
+                top: 30vh;
+               }
+            }
+            body {
+                background-color: aqua;
+            }
+            a {
+                color: black;
+                text-decoration: none;
+            }
+            .versionDiv {
+                border: 2px black groove;
+                right: .5%; 
+                width: 100px; 
+                height: 60px; 
+                clear: none;
+                float: right;
+                position: fixed;
+                background: linear-gradient(to right, red, yellow, green, blue, purple, red);
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+            }
+            #updateButton {
+                position: fixed;
+                left: 0;
+                bottom: 0;
+                width: 50px;
+                height: 50px;
+                border-radius: 100px;
+                background-color: beige;
+                text-align: center;
             }
         </style>
     </head>
-<body style="background-color: aqua;">
+    <audio id="myAudio" loop>
+        <source src="funky.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    <div class="versionDiv" title="Version Selector"> <h3 style="text-align: center;"><a href="versionlog.html">Version 2 </a></h3>
+    </div>
     <header style="text-align: center; font-size: 14pt;">
         <h2>Who is Brent Today?</h2>
     </header>
-    <img src="brent.jpg" style="float: right;">
+    <aside id="updateButton">
+        <a href="upLog.html" target="_blank"><img src="updatelog.png" style="margin: auto; height: 100%; width: 100%;" title="Update Log" id="upLogImg"></a>
+    </aside>
+    <img src="salmonbrent.jpg" style="float: right;" id="salmonFunc">
     <img src="" style="float: left;" id="image">
     <div id="rotate" class="div1">
-    <button onclick="displayText()" id="button">Click For Brent's Name!</button>
-    <p id="demo" style="display: none"></p>
+    <button onclick="displayText(), ani()" id="button">Click For Brent's Name!</button>
+    <p id="brentName" style="display: none;"></p>
     </div>
     <aside style="text-align: center; margin: auto;">
        <h2> Countdown Until Next Update! </h2>
+    </aside>
+    <aside style="position: absolute; top: 20px; left: 80px;">
+        <button onclick="salmon()" style="background-color: rgba(0, 0, 0, 0); color: rgba(0, 0, 0, 0);border: none;">Easter Egg</button>
     </aside>
     <div class="div2">
     <label id="timer">
         
         <script>
-            var countDownDate = new Date("Mar 29, 2024 12:00:00").getTime();
+            var countDownDate = new Date("Mar 21, 2024 00:00:00").getTime();
 
 // Update the count down every 1 second
 var t = setInterval(function() {
@@ -80,7 +207,7 @@ var t = setInterval(function() {
   // If the count down is finished, write some text
   if (distance < 0) {
     clearInterval(t);
-    document.getElementById("timer").innerHTML = "Update Out Now!";
+    document.getElementById("timer").innerHTML = "Update Out Now! Sorry about the wait. A new patch coming soon for updated pictures.";
   }
 }, 1000);
 </script>
@@ -88,20 +215,55 @@ var t = setInterval(function() {
     </label>
 </div>
    <script>
-   let y = new Date();
-   let x = y.getDay(); //generates day. Minus 1 due to my timezone.
-   let text = "";
-   let timeout;
-   text += "Brentus Gronfurus Maximus III" + ["", " of Poland"," of Malaysia"," of Thailand"," of Micronesia"," of Sweden",""][x];
+   var namelist1= ["Brentus Gronfurus Maximus ", "Brentus Alexandrius Ultimus ", "Brentavius Gronfuritis ", "Brent "]
+var namelist2=["the I of ","the II of ","the III of ", "the IV of ", "the III of ",]
+var namelist3=["the United States of America", "Malaysia", "Nigeria", "the Vatican City", "Italy", "Britain", "Venezuela", "Paraguay", "the United Nations of Foot", "China"]
+function getName(){
+var date=(new Date).getDate()
+    var day=(new Date).getDay()
+    var month=(new Date).getMonth()
+    var index1=month+day+date
+    var index2=month*day+date*month
+    var index3=month*day*date
+    while(index1>namelist1.length-1){
+    index1-=namelist1.length-1
+    }
+    while(index2>namelist2.length-1){
+    index2-=namelist2.length-1
+    }
+    while(index3>namelist3.length-1){
+    index3-=namelist3.length-1
+    }
+    if(index1<0){
+    index1=0
+    }
+    if(index1>namelist1.length-1){
+    index1=0
+    }
+    if(index2<0){
+    index2=0
+    }
+    if(index2>namelist2.length-1){
+    index2=0
+    }
+    if(index3<0){
+    index3=0
+    }
+    if(index3>namelist3.length-1){
+    index3=0
+    }
+    return namelist1[index1]+namelist2[index2]+namelist3[index3]
+}
+document.getElementById('brentName').innerHTML = getName();
         function displayText() { //function that activates button
-            let text = document.getElementById("demo");
+            let text = document.getElementById("brentName");
             text.style.display = "block"; 
             let textTwo = document.getElementById("button")
             textTwo.style.display = "none";
             let rotate = document.getElementById("rotate");
             rotate.style.transform = 'rotate(360deg)';
             setTimeout(() => {
-                let text = document.getElementById("demo");
+                let text = document.getElementById("brentName");
             text.style.display = "none"; 
             let textTwo = document.getElementById("button")
             textTwo.style.display = "inline-block";
@@ -109,12 +271,12 @@ var t = setInterval(function() {
             rotate.style.transform = 'rotate(-360deg)';
             }, 4000)
         }
-        
-        document.getElementById("demo").innerHTML = text //displays the name
         let myImage = function myImage(img) { 
         const image = document.getElementById('image');
         image.src = img;
     }
+    let y = new Date();
+   let x = y.getDay();
         switch (x) {
             case 0:
             myImage("dog.jpg");
@@ -138,6 +300,18 @@ var t = setInterval(function() {
             myImage("Frankie.jpg");
             break;
         }
+var funky = document.getElementById("myAudio");
+function salmon() {
+    const image = document.getElementById('image');
+        image.src = "spinningsalmon.gif";
+        document.getElementById('brentName').innerHTML = "salmon";
+        const foot = document.getElementById('salmonFunc');
+        foot.src = "spinningsalmon.gif";
+   funky.play();
+}
+
     </script>
+<a href="offline.html"><img id="salmon" src="slamon.png"></a>
+<img src="" style="float: left;" id="image" class="mobileMeme">
 </body>
 </html>
