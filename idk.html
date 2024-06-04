@@ -73,16 +73,16 @@
             
             @keyframes animation {
                0% {
-                left: 0vw;
+                left: 0vh;
                 top: 30vh;
                }
                25% {
-                left: 90vw;
+                left: 100vh;
                 top: 30vh;
                 transform: rotate(0deg);
                }
                30% {
-                left: 90vw;
+                left: 100vh;
                 top: 30vh;
                 transform: rotate(-90deg);
                }
@@ -95,28 +95,32 @@
                 transform: rotate(90deg)
                }
                60% {
-                top: 90vh;
-                left: 90vw;
+                top: 100vh;
+                left: 100vh;
+                transform: rotate(90deg);
                }
                61% {
-                top: 90vh;
-                left: 90vw;
-                transform: rotateY(180deg)
+                top: 100vh;
+                left: 100vh;
+                transform: rotate(90deg);
+               }
+               65% {
+                transform: rotate(180deg);
                }
                80% {
-                left: 1vw;
+                left: 1vh;
                 top: 70vh;
                 transform: rotate(270deg);
                }
                90% {
-                left: 1vw;
+                left: 1vh;
                 top: 30vh;
                }
                95% {
                 transform: rotate(0deg);
                }
                100% {
-                left: 0vw;
+                left: 0vh;
                 top: 30vh;
                }
             }

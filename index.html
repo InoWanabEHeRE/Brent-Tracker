@@ -5,7 +5,7 @@
         <link rel="shortcut icon" href="fav.ico">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="keywords" content="Brent, Tracker, Brent Tracker, brent tracker, name, Brentus Gronfurus Maximus the 3, Brentavius">
+        <meta name="keywords" content="Brent, Tracker, Brent Tracker, brent tracker, name">
         <meta name="description" content="Brent Tracker is a website to track the name of my friend, Brent. I update this website semi-regularly with new names and little easter eggs.">
         <meta name="author" content="Liam F. Davis">
         <style>
@@ -97,15 +97,11 @@
                60% {
                 top: 90vh;
                 left: 90vw;
-                transform: rotate(90deg);
                }
                61% {
                 top: 90vh;
                 left: 90vw;
-                transform: rotate(90deg);
-               }
-               65% {
-                transform: rotate(180deg);
+                transform: rotateY(180deg)
                }
                80% {
                 left: 1vw;
@@ -216,14 +212,14 @@ var t = setInterval(function() {
 </div>
    <script>
    var namelist1= ["Brentus Gronfurus Maximus ", "Brentus Alexandrius Ultimus ", "Brentavius Gronfuritis ", "Brent "]
-var namelist2=["the I of ","the II of ","the III of ", "the IV of ", "the V of ", "the VI of ", "the VII of ", "the VIII of ", "the IX of ", "the X of "]
-var namelist3=["the United States of America", "Malaysia", "Nigeria", "the Vatican City", "Italy", "Britain", "Venezuela", "Paraguay", "the United Nations of Foot", "China", "Chad", "Afghanistan", "Iraq", "Uzbekistan", "Finland", "Canada"]
+var namelist2=["the I of ","the II of ","the III of ", "the IV of ", "the III of ",]
+var namelist3=["the United States of America", "Malaysia", "Nigeria", "the Vatican City", "Italy", "Britain", "Venezuela", "Paraguay", "the United Nations of Foot", "China"]
 function getName(){
 var date=(new Date).getDate()
     var day=(new Date).getDay()
     var month=(new Date).getMonth()
     var index1=month+day+date
-    var index2=month*day+date
+    var index2=month*day+date*month
     var index3=month*day*date
     while(index1>namelist1.length-1){
     index1-=namelist1.length-1
