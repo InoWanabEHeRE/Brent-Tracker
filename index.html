@@ -213,14 +213,14 @@ var t = setInterval(function() {
    <script>
     var namelist1= ["Brentus Gronfurus Maximus ", "Brentus Alexandrius Ultimus ", "Brentavius Gronfuritis ", "Brent "]
     var namelist2=["the I of ","the II of ","the III of ", "the IV of ", "the V of ", "the VI of ", "the VII of ", "the VIII of ", "the IX of ", "the X of "]
-    var namelist3=["the United States of America", "Malaysia", "Nigeria", "the Vatican City", "Italy", "Britain", "Venezuela", "Paraguay", "the United Nations of Foot", "China"]
+    var namelist3=["the United States of America", "Malaysia", "Nigeria", "the Vatican City", "Italy", "Britain", "Venezuela", "Paraguay", "the United Nations of Foot", "China", "Canada", "Germany"]
     function getName(){
         var date = (new Date).getDate()
         var day = (new Date).getDay()
         var month = (new Date).getMonth()
         var index1 = month+day+date
-        var index2 = month*day+date*month
-        var index3 = month*day*date
+        var index2 = (day * date) - day + (date * date)
+        var index3 = (month*day*date - day) * month
         while(index1>namelist1.length-1){
             index1-=namelist1.length-1
         }
