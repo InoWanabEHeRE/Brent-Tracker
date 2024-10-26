@@ -154,7 +154,7 @@
     <audio id="myAudio" loop>
         <source src="funky.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
-      </audio>
+    </audio>
     <div class="versionDiv" title="Version Selector"> <h3 style="text-align: center;"><a href="versionlog.html">Version 2 </a></h3>
     </div>
     <header style="text-align: center; font-size: 14pt;">
@@ -211,44 +211,44 @@ var t = setInterval(function() {
     </label>
 </div>
    <script>
-   var namelist1= ["Brentus Gronfurus Maximus ", "Brentus Alexandrius Ultimus ", "Brentavius Gronfuritis ", "Brent "]
-var namelist2=["the I of ","the II of ","the III of ", "the IV of ", "the V of ", "the VI of ", "the VII of ", "the VIII of ", "the IX of ", "the X of "]
-var namelist3=["the United States of America", "Malaysia", "Nigeria", "the Vatican City", "Italy", "Britain", "Venezuela", "Paraguay", "the United Nations of Foot", "China"]
-function getName(){
-var date=(new Date).getDate()
-    var day=(new Date).getDay()
-    var month=(new Date).getMonth()
-    var index1=month+day+date
-    var index2=month*day+date*month
-    var index3=month*day*date
-    while(index1>namelist1.length-1){
-    index1-=namelist1.length-1
-    }
-    while(index2>namelist2.length-1){
-    index2-=namelist2.length-1
-    }
-    while(index3>namelist3.length-1){
-    index3-=namelist3.length-1
-    }
-    if(index1<0){
-    index1=0
-    }
-    if(index1>namelist1.length-1){
-    index1=0
-    }
-    if(index2<0){
-    index2=0
-    }
-    if(index2>namelist2.length-1){
-    index2=0
-    }
-    if(index3<0){
-    index3=0
-    }
-    if(index3>namelist3.length-1){
-    index3=0
-    }
-    return namelist1[index1]+namelist2[index2]+namelist3[index3]
+    var namelist1= ["Brentus Gronfurus Maximus ", "Brentus Alexandrius Ultimus ", "Brentavius Gronfuritis ", "Brent "]
+    var namelist2=["the I of ","the II of ","the III of ", "the IV of ", "the V of ", "the VI of ", "the VII of ", "the VIII of ", "the IX of ", "the X of "]
+    var namelist3=["the United States of America", "Malaysia", "Nigeria", "the Vatican City", "Italy", "Britain", "Venezuela", "Paraguay", "the United Nations of Foot", "China"]
+    function getName(){
+        var date = (new Date).getDate()
+        var day = (new Date).getDay()
+        var month = (new Date).getMonth()
+        var index1 = month+day+date
+        var index2 = month*day+date*month
+        var index3 = month*day*date
+        while(index1>namelist1.length-1){
+            index1-=namelist1.length-1
+        }
+        while(index2>namelist2.length-1){
+            index2-=namelist2.length-1
+        }
+        while(index3>namelist3.length-1){
+            index3-=namelist3.length-1
+        }
+        if(index1<0){
+            index1=0
+        }
+        if(index1>namelist1.length-1){
+            index1=0
+        }
+        if(index2<0){
+            index2=0
+        }
+        if(index2>namelist2.length-1){
+            index2=0
+        }
+        if(index3<0){
+            index3=0
+        }
+        if(index3>namelist3.length-1){
+            index3=0
+        }
+        return namelist1[index1]+namelist2[index2]+namelist3[index3]
 }
 document.getElementById('brentName').innerHTML = getName();
         function displayText() { //function that activates button
