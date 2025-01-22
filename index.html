@@ -151,6 +151,15 @@
                 background-color: beige;
                 text-align: center;
             }
+            #location {
+                border: solid black 5px;
+                position: fixed;
+                left: 45vw;
+                bottom: 45vh;
+                width: 200px;
+                height: 150px;
+                text-align: center;
+            }
         </style>
     </head>
     <audio id="myAudio" loop>
@@ -212,6 +221,28 @@ var t = setInterval(function() {
 
     </label>
 </div>
+<div id="location">
+    <button onclick="getLocation()" style="margin: auto">Click I Dare You.</button>
+    <div id="mapholder">
+    
+    </div>
+</div>
+<script>
+    const loc = document.getElementById("location");
+    
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else { 
+        loc.innerHTML = "Geolocation is not supported by this browser.";
+      }
+    }
+    
+    function showPosition(position) {
+        let img_url = "https://www.streetdirectory.com/map/?l=8&amp;w=200&amp;h=400&amp;long="+position.coords.longitude+"&amp;lat="+position.coords.latitude+"&amp;mode=get_here&amp;country=sg&amp;style=stylish";
+        document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
+    }
+</script>
    <script>
     var namelist1= ["Brentus Gronfurus Maximus ", "Brentus Alexandrius Ultimus ", "Brentavius Gronfuritis ", "Brent "]
     var namelist2=["the I of ","the II of ","the III of ", "the IV of ", "the V of ", "the VI of ", "the VII of ", "the VIII of ", "the IX of ", "the X of "]
