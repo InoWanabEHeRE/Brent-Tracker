@@ -226,6 +226,9 @@ var t = setInterval(function() {
     <div id="mapholder">
     
     </div>
+    <div id="url">
+
+    </div>
 </div>
 <script>
     const loc = document.getElementById("location");
@@ -243,6 +246,7 @@ var t = setInterval(function() {
     function showPosition(position) {
         let img_url = "http://maps.google.com/maps?q="+position.coords.latitude+","+position.coords.longitude+"&hl=en&z=14&amp;output=embed";
         document.getElementById("mapholder").innerHTML = "<iframe src='"+img_url+"' style=''>";
+        document.getElementById("url").innerHTML = img_url+"<br>"+position.coords.latitude+"<br>"+position.coords.longitude;
     }
 </script>
    <script>
