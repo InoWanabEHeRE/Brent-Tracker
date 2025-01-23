@@ -156,8 +156,8 @@
                 position: fixed;
                 left: 45vw;
                 bottom: 45vh;
-                width: 200px;
-                height: 150px;
+                width: 304px;
+                height: 154px;
                 text-align: center;
             }
         </style>
@@ -222,14 +222,16 @@ var t = setInterval(function() {
     </label>
 </div>
 <div id="location">
-    <button onclick="getLocation()" style="margin: auto">Click I Dare You.</button>
+    <button onclick="getLocation(), hideBttn()" style="margin: auto;" id="locBttn">Click I Dare You.</button>
     <div id="mapholder">
     
     </div>
 </div>
 <script>
     const loc = document.getElementById("location");
-    
+    function hideBttn() {
+        document.getElementById("locBttn").style.display = "none";
+    }
     function getLocation() {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
@@ -239,8 +241,8 @@ var t = setInterval(function() {
     }
     
     function showPosition(position) {
-        let img_url = "https://www.streetdirectory.com/map/?l=8&amp;w=200&amp;h=400&amp;long="+position.coords.longitude+"&amp;lat="+position.coords.latitude+"&amp;mode=get_here&amp;country=sg&amp;style=stylish";
-        document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
+        let img_url = "http://maps.google.com/maps?q="+position.coords.latitude+","+position.coords.longitude+"&hl=en&z=14&amp;output=embed";
+        document.getElementById("mapholder").innerHTML = "<iframe src='"+img_url+"' style=''>";
     }
 </script>
    <script>
